@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/doa_model.dart';
+import 'package:aplikasi_doa/models/doa_model.dart';
 
 class DoaListItem extends StatelessWidget {
   final Doa doa;
@@ -25,7 +25,7 @@ class DoaListItem extends StatelessWidget {
         ),
       ),
       title: Text(
-        doa.title,
+        doa.judul,
         style: const TextStyle(fontWeight: FontWeight.w500),
       ),
       trailing: isFavorite ? const Icon(Icons.star, color: Colors.amber) : null,

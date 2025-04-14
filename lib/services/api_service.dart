@@ -3,8 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:aplikasi_doa/models/doa_model.dart';
 
 class ApiService {
-  static const String _baseUrl =
-      'https://doa-doa-api-ahmadramadhan.fly.dev/api';
+  static const String _baseUrl = 'https://open-api.my.id/api/doa';
 
   static Future<List<Doa>> getAllDoa() async {
     final response = await http.get(Uri.parse(_baseUrl));

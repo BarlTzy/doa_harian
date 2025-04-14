@@ -1,25 +1,25 @@
 class Doa {
   final int id;
-  final String title;
-  final String arabic;
+  final String judul;
   final String latin;
-  final String translation;
+  final String arab;
+  final String terjemah;
 
   Doa({
     required this.id,
-    required this.title,
-    required this.arabic,
+    required this.judul,
     required this.latin,
-    required this.translation,
+    required this.arab,
+    required this.terjemah,
   });
 
   factory Doa.fromJson(Map<String, dynamic> json) {
     return Doa(
       id: json['id'] ?? 0,
-      title: json['doa'] ?? '',
-      arabic: json['ayat'] ?? '',
+      judul: json['doa'] ?? '',
       latin: json['latin'] ?? '',
-      translation: json['artinya'] ?? '',
+      arab: json['ayat'] ?? '',
+      terjemah: json['artinya'] ?? '',
     );
   }
 }

@@ -29,8 +29,8 @@ class _SearchScreenState extends State<SearchScreen> {
           allDoa
               .where(
                 (doa) =>
-                    doa.title.toLowerCase().contains(query.toLowerCase()) ||
-                    doa.translation.toLowerCase().contains(query.toLowerCase()),
+                    doa.judul.toLowerCase().contains(query.toLowerCase()) ||
+                    doa.terjemah.toLowerCase().contains(query.toLowerCase()),
               )
               .toList();
     });
@@ -65,8 +65,8 @@ class _SearchScreenState extends State<SearchScreen> {
                       itemBuilder: (context, index) {
                         final doa = _searchResults[index];
                         return ListTile(
-                          title: Text(doa.title),
-                          subtitle: Text(doa.translation),
+                          title: Text(doa.judul),
+                          subtitle: Text(doa.terjemah),
                           onTap: () {
                             Navigator.push(
                               context,

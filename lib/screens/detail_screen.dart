@@ -43,7 +43,7 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.doa.title),
+        title: Text(widget.doa.judul),
         actions: [
           IconButton(
             icon: Icon(_isFavorite ? Icons.favorite : Icons.favorite_border),
@@ -57,7 +57,7 @@ class _DetailScreenState extends State<DetailScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              widget.doa.arabic,
+              widget.doa.arab,
               style: const TextStyle(fontSize: 24, fontFamily: 'Amiri'),
               textAlign: TextAlign.right,
             ),
@@ -71,7 +71,7 @@ class _DetailScreenState extends State<DetailScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  widget.doa.translation,
+                  widget.doa.terjemah,
                   style: const TextStyle(fontSize: 16),
                 ),
               ),

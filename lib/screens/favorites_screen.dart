@@ -35,8 +35,8 @@ class FavoritesScreen extends StatelessWidget {
               return Card(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: ListTile(
-                  title: Text(doa.title),
-                  subtitle: Text(doa.translation),
+                  title: Text(doa.judul),
+                  subtitle: Text(doa.terjemah),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete),
                     onPressed: () async {
