@@ -44,12 +44,7 @@ class _DetailScreenState extends State<DetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.doa.judul),
-        actions: [
-          IconButton(
-            icon: Icon(_isFavorite ? Icons.favorite : Icons.favorite_border),
-            onPressed: _toggleFavorite,
-          ),
-        ],
+        // DIHAPUS: Icon favorite dari appbar
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -80,6 +75,15 @@ class _DetailScreenState extends State<DetailScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                // TAMBAHKAN: Favorite button di sini
+                ElevatedButton.icon(
+                  icon: Icon(
+                    _isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: _isFavorite ? Colors.red : null,
+                  ),
+                  label: Text(_isFavorite ? 'Favorit' : 'Tambahkan ke Favorit'),
+                  onPressed: _toggleFavorite,
+                ),
                 ElevatedButton.icon(
                   icon: const Icon(Icons.share),
                   label: const Text('Bagikan'),

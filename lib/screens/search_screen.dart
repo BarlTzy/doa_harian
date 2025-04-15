@@ -66,7 +66,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         final doa = _searchResults[index];
                         return ListTile(
                           title: Text(doa.judul),
-                          subtitle: Text(doa.terjemah),
+                          // subtitle: Text(doa.terjemah),
                           onTap: () {
                             Navigator.push(
                               context,

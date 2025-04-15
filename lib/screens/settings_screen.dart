@@ -13,18 +13,20 @@ class SettingsScreen extends StatelessWidget {
         children: [
           const Text(
             'Tentang Aplikasi',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 8),
-          const Text('Kumpulan_Doa v1.0'),
-          const Divider(height: 32),
-          const Text(
-            'Sumber Data',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
-          const Text('API: doa-doa-api-ahmadramadhan.fly.dev'),
-          const Divider(height: 32),
+          // const SizedBox(height: 8),
+          // const Text('Kumpulan_Doa v1.0'),
+          // const Divider(height: 32),
+          // const Text(
+          //   'Sumber Data',
+          //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          // ),
+          // const SizedBox(height: 8),
+          // const Text(
+          //   'API: https://open-api.my.id/api/doa',
+          // ), //'https://open-api.my.id/api/doa
+          // const Divider(height: 32),
           const Text(
             'Tema Aplikasi',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -35,7 +37,7 @@ class SettingsScreen extends StatelessWidget {
             children: [
               _buildThemeOption(Colors.green, context),
               _buildThemeOption(Colors.blue, context),
-              _buildThemeOption(Colors.purple, context),
+              _buildThemeOption(Colors.red, context),
             ],
           ),
           const Divider(height: 32),
