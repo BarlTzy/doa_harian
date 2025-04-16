@@ -22,17 +22,6 @@ class FavoritesScreen extends StatelessWidget {
         ), // White back button
       ),
       body: Container(
-        // decoration: const BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.topCenter,
-        //     end: Alignment.bottomCenter,
-        //     colors: [
-        //       Colors.green,
-        //       Colors.white, // Fading to white
-        //     ],
-        //     stops: [0.05, 0.05], // Only first 5% is green
-        //   ),
-        // ),
         child: FutureBuilder<List<Doa>>(
           future: FavoriteService.getFavorites(),
           builder: (context, snapshot) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../models/doa_model.dart';
-import '../services/api_service.dart';
+import 'package:aplikasi_doa/models/doa_model.dart';
+import 'package:aplikasi_doa/services/api_service.dart';
 import 'detail_screen.dart';
-import '../widgets/bottom_nav_bar.dart';
+import 'package:aplikasi_doa/widgets/bottom_nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
