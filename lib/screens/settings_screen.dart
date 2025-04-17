@@ -7,56 +7,82 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Pengaturan'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text(
+          'Pengaturan',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.green,
+        automaticallyImplyLeading: false, // Menghilangkan ikon back
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          const Text(
-            'Tentang Aplikasi',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          // const SizedBox(height: 8),
-          // const Text('Kumpulan_Doa v1.0'),
-          // const Divider(height: 32),
-          // const Text(
-          //   'Sumber Data',
-          //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          // ),
-          // const SizedBox(height: 8),
-          // const Text(
-          //   'API: https://open-api.my.id/api/doa',
-          // ), //'https://open-api.my.id/api/doa
-          // const Divider(height: 32),
-          const Text(
-            'Tema Aplikasi',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildThemeOption(Colors.green, context),
-              _buildThemeOption(Colors.blue, context),
-              _buildThemeOption(Colors.red, context),
-            ],
+          // Ganti Tema
+          _buildSettingItem(
+            title: 'Ganti Tema',
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _buildThemeOption(Colors.green, context),
+                _buildThemeOption(Colors.blue, context),
+                _buildThemeOption(Colors.purple, context),
+              ],
+            ),
           ),
           const Divider(height: 32),
-          const Text(
-            'Ukuran Font',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+
+          // Ukuran Font
+          _buildSettingItem(
+            title: 'Atur Ukuran Font',
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text('A', style: TextStyle(fontSize: 16)),
+                Text('A', style: TextStyle(fontSize: 20)),
+                Text('A', style: TextStyle(fontSize: 24)),
+              ],
+            ),
           ),
-          const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text('A', style: TextStyle(fontSize: 16)),
-              Text('A', style: TextStyle(fontSize: 20)),
-              Text('A', style: TextStyle(fontSize: 24)),
-            ],
+          const Divider(height: 32),
+
+          // Versi Aplikasi
+          _buildSettingItem(
+            title: 'Versi Aplikasi',
+            child: const Text('1.0.0', style: TextStyle(color: Colors.grey)),
+          ),
+          const Divider(height: 32),
+
+          // Bestar
+          _buildSettingItem(
+            title: 'Beri Rating',
+            child: const Icon(Icons.star, color: Colors.amber),
+          ),
+          const Divider(height: 32),
+
+          // Ketentuan & Layanan
+          _buildSettingItem(
+            title: 'Ketentuan & Layanan',
+            child: const Icon(Icons.chevron_right, color: Colors.grey),
           ),
         ],
       ),
       bottomNavigationBar: const BottomNavBar(selectedIndex: 3),
+    );
+  }
+
+  Widget _buildSettingItem({required String title, required Widget child}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        ),
+        const SizedBox(height: 12),
+        child,
+      ],
     );
   }
 

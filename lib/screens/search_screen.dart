@@ -64,8 +64,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   prefixIcon: const Icon(Icons.search),
                   filled: true,
                   fillColor:
-                      Colors
-                          .lightGreenAccent, // Light yellow background color[200],
+                      Colors.grey[200], // Light yellow background color[200],
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide.none,
@@ -105,7 +104,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              subtitle: Text(doa.terjemah),
+
                               onTap: () {
                                 Navigator.push(
                                   context,

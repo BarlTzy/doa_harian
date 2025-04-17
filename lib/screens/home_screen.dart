@@ -25,19 +25,27 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Doa-Doa Harian',
+        title: const Text(
+          'Kumpulan Doa',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: BoxDecoration(color: _headerColor),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Column(
         children: [
           Container(height: 8, color: _headerColor),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: const Text(
+              '"Doa adalah senjata orang beriman"',
+              style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+              textAlign: TextAlign.center,
+            ),
+          ),
           Expanded(
             child: FutureBuilder<List<Doa>>(
               future: _futureDoa,
@@ -52,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   return const Center(child: Text('Tidak ada data doa'));
                 }
                 return ListView.builder(
+                  padding: const EdgeInsets.only(bottom: 16),
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
                     final doa = snapshot.data![index];
@@ -61,7 +70,20 @@ class _HomeScreenState extends State<HomeScreen> {
                         vertical: 8,
                       ),
                       child: ListTile(
-                        title: Text(doa.judul),
+                        leading: CircleAvatar(
+                          backgroundColor: _headerColor,
+                          child: Text(
+                            '${index + 1}',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        title: Text(
+                          doa.judul,
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
                         onTap: () {
                           Navigator.push(
                             context,
